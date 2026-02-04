@@ -781,12 +781,12 @@ impl Statistics {
     let struct_ident = TStructIdentifier::new("Statistics");
     written += o_prot.write_struct_begin(&struct_ident)?;
     if let Some(ref fld_var) = self.max {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("max", TType::String, 1))?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("max", TType::Binary, 1))?;
       written += o_prot.write_bytes(fld_var)?;
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.min {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("min", TType::String, 2))?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("min", TType::Binary, 2))?;
       written += o_prot.write_bytes(fld_var)?;
       written += o_prot.write_field_end()?;
     }
@@ -801,12 +801,12 @@ impl Statistics {
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.max_value {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("max_value", TType::String, 5))?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("max_value", TType::Binary, 5))?;
       written += o_prot.write_bytes(fld_var)?;
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.min_value {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("min_value", TType::String, 6))?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("min_value", TType::Binary, 6))?;
       written += o_prot.write_bytes(fld_var)?;
       written += o_prot.write_field_end()?;
     }
@@ -820,12 +820,12 @@ impl Statistics {
     let struct_ident = TStructIdentifier::new("Statistics");
     written += o_prot.write_struct_begin(&struct_ident).await?;
     if let Some(ref fld_var) = self.max {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("max", TType::String, 1)).await?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("max", TType::Binary, 1)).await?;
       written += o_prot.write_bytes(fld_var).await?;
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.min {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("min", TType::String, 2)).await?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("min", TType::Binary, 2)).await?;
       written += o_prot.write_bytes(fld_var).await?;
       written += o_prot.write_field_end()?;
     }
@@ -840,12 +840,12 @@ impl Statistics {
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.max_value {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("max_value", TType::String, 5)).await?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("max_value", TType::Binary, 5)).await?;
       written += o_prot.write_bytes(fld_var).await?;
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.min_value {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("min_value", TType::String, 6)).await?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("min_value", TType::Binary, 6)).await?;
       written += o_prot.write_bytes(fld_var).await?;
       written += o_prot.write_field_end()?;
     }
@@ -3261,7 +3261,7 @@ impl SchemaElement {
       written += fld_var.write_to_out_protocol(o_prot)?;
       written += o_prot.write_field_end()?;
     }
-    written += o_prot.write_field_begin(&TFieldIdentifier::new("name", TType::String, 4))?;
+    written += o_prot.write_field_begin(&TFieldIdentifier::new("name", TType::Binary, 4))?;
     written += o_prot.write_string(&self.name)?;
     written += o_prot.write_field_end()?;
     if let Some(fld_var) = self.num_children {
@@ -3318,7 +3318,7 @@ impl SchemaElement {
       written += fld_var.write_to_out_stream_protocol(o_prot).await?;
       written += o_prot.write_field_end()?;
     }
-    written += o_prot.write_field_begin(&TFieldIdentifier::new("name", TType::String, 4)).await?;
+    written += o_prot.write_field_begin(&TFieldIdentifier::new("name", TType::Binary, 4)).await?;
     written += o_prot.write_string(&self.name).await?;
     written += o_prot.write_field_end()?;
     if let Some(fld_var) = self.num_children {
@@ -5526,11 +5526,11 @@ impl KeyValue {
     let mut written = 0;
     let struct_ident = TStructIdentifier::new("KeyValue");
     written += o_prot.write_struct_begin(&struct_ident)?;
-    written += o_prot.write_field_begin(&TFieldIdentifier::new("key", TType::String, 1))?;
+    written += o_prot.write_field_begin(&TFieldIdentifier::new("key", TType::Binary, 1))?;
     written += o_prot.write_string(&self.key)?;
     written += o_prot.write_field_end()?;
     if let Some(ref fld_var) = self.value {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("value", TType::String, 2))?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("value", TType::Binary, 2))?;
       written += o_prot.write_string(fld_var)?;
       written += o_prot.write_field_end()?;
     }
@@ -5543,11 +5543,11 @@ impl KeyValue {
     let mut written = 0;
     let struct_ident = TStructIdentifier::new("KeyValue");
     written += o_prot.write_struct_begin(&struct_ident).await?;
-    written += o_prot.write_field_begin(&TFieldIdentifier::new("key", TType::String, 1)).await?;
+    written += o_prot.write_field_begin(&TFieldIdentifier::new("key", TType::Binary, 1)).await?;
     written += o_prot.write_string(&self.key).await?;
     written += o_prot.write_field_end()?;
     if let Some(ref fld_var) = self.value {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("value", TType::String, 2)).await?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("value", TType::Binary, 2)).await?;
       written += o_prot.write_string(fld_var).await?;
       written += o_prot.write_field_end()?;
     }
@@ -6037,7 +6037,7 @@ impl ColumnMetaData {
     written += o_prot.write_list_end()?;
     written += o_prot.write_field_end()?;
     written += o_prot.write_field_begin(&TFieldIdentifier::new("path_in_schema", TType::List, 3))?;
-    written += o_prot.write_list_begin(&TListIdentifier::new(TType::String, self.path_in_schema.len().try_into()?))?;
+    written += o_prot.write_list_begin(&TListIdentifier::new(TType::Binary, self.path_in_schema.len().try_into()?))?;
     for e in &self.path_in_schema {
       written += o_prot.write_string(e)?;
     }
@@ -6116,7 +6116,7 @@ impl ColumnMetaData {
     written += o_prot.write_list_end().await?;
     written += o_prot.write_field_end()?;
     written += o_prot.write_field_begin(&TFieldIdentifier::new("path_in_schema", TType::List, 3)).await?;
-    written += o_prot.write_list_begin(&TListIdentifier::new(TType::String, self.path_in_schema.len().try_into()?)).await?;
+    written += o_prot.write_list_begin(&TListIdentifier::new(TType::Binary, self.path_in_schema.len().try_into()?)).await?;
     for e in &self.path_in_schema {
       written += o_prot.write_string(e).await?;
     }
@@ -6526,14 +6526,14 @@ impl EncryptionWithColumnKey {
     let struct_ident = TStructIdentifier::new("EncryptionWithColumnKey");
     written += o_prot.write_struct_begin(&struct_ident)?;
     written += o_prot.write_field_begin(&TFieldIdentifier::new("path_in_schema", TType::List, 1))?;
-    written += o_prot.write_list_begin(&TListIdentifier::new(TType::String, self.path_in_schema.len().try_into()?))?;
+    written += o_prot.write_list_begin(&TListIdentifier::new(TType::Binary, self.path_in_schema.len().try_into()?))?;
     for e in &self.path_in_schema {
       written += o_prot.write_string(e)?;
     }
     written += o_prot.write_list_end()?;
     written += o_prot.write_field_end()?;
     if let Some(ref fld_var) = self.key_metadata {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("key_metadata", TType::String, 2))?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("key_metadata", TType::Binary, 2))?;
       written += o_prot.write_bytes(fld_var)?;
       written += o_prot.write_field_end()?;
     }
@@ -6547,14 +6547,14 @@ impl EncryptionWithColumnKey {
     let struct_ident = TStructIdentifier::new("EncryptionWithColumnKey");
     written += o_prot.write_struct_begin(&struct_ident).await?;
     written += o_prot.write_field_begin(&TFieldIdentifier::new("path_in_schema", TType::List, 1)).await?;
-    written += o_prot.write_list_begin(&TListIdentifier::new(TType::String, self.path_in_schema.len().try_into()?)).await?;
+    written += o_prot.write_list_begin(&TListIdentifier::new(TType::Binary, self.path_in_schema.len().try_into()?)).await?;
     for e in &self.path_in_schema {
       written += o_prot.write_string(e).await?;
     }
     written += o_prot.write_list_end().await?;
     written += o_prot.write_field_end()?;
     if let Some(ref fld_var) = self.key_metadata {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("key_metadata", TType::String, 2)).await?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("key_metadata", TType::Binary, 2)).await?;
       written += o_prot.write_bytes(fld_var).await?;
       written += o_prot.write_field_end()?;
     }
@@ -6888,7 +6888,7 @@ impl ColumnChunk {
     let struct_ident = TStructIdentifier::new("ColumnChunk");
     written += o_prot.write_struct_begin(&struct_ident)?;
     if let Some(ref fld_var) = self.file_path {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("file_path", TType::String, 1))?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("file_path", TType::Binary, 1))?;
       written += o_prot.write_string(fld_var)?;
       written += o_prot.write_field_end()?;
     }
@@ -6926,7 +6926,7 @@ impl ColumnChunk {
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.encrypted_column_metadata {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("encrypted_column_metadata", TType::String, 9))?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("encrypted_column_metadata", TType::Binary, 9))?;
       written += o_prot.write_bytes(fld_var)?;
       written += o_prot.write_field_end()?;
     }
@@ -6940,7 +6940,7 @@ impl ColumnChunk {
     let struct_ident = TStructIdentifier::new("ColumnChunk");
     written += o_prot.write_struct_begin(&struct_ident).await?;
     if let Some(ref fld_var) = self.file_path {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("file_path", TType::String, 1)).await?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("file_path", TType::Binary, 1)).await?;
       written += o_prot.write_string(fld_var).await?;
       written += o_prot.write_field_end()?;
     }
@@ -6978,7 +6978,7 @@ impl ColumnChunk {
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.encrypted_column_metadata {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("encrypted_column_metadata", TType::String, 9)).await?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("encrypted_column_metadata", TType::Binary, 9)).await?;
       written += o_prot.write_bytes(fld_var).await?;
       written += o_prot.write_field_end()?;
     }
@@ -8019,14 +8019,14 @@ impl ColumnIndex {
     written += o_prot.write_list_end()?;
     written += o_prot.write_field_end()?;
     written += o_prot.write_field_begin(&TFieldIdentifier::new("min_values", TType::List, 2))?;
-    written += o_prot.write_list_begin(&TListIdentifier::new(TType::String, self.min_values.len().try_into()?))?;
+    written += o_prot.write_list_begin(&TListIdentifier::new(TType::Binary, self.min_values.len().try_into()?))?;
     for e in &self.min_values {
       written += o_prot.write_bytes(e)?;
     }
     written += o_prot.write_list_end()?;
     written += o_prot.write_field_end()?;
     written += o_prot.write_field_begin(&TFieldIdentifier::new("max_values", TType::List, 3))?;
-    written += o_prot.write_list_begin(&TListIdentifier::new(TType::String, self.max_values.len().try_into()?))?;
+    written += o_prot.write_list_begin(&TListIdentifier::new(TType::Binary, self.max_values.len().try_into()?))?;
     for e in &self.max_values {
       written += o_prot.write_bytes(e)?;
     }
@@ -8061,14 +8061,14 @@ impl ColumnIndex {
     written += o_prot.write_list_end().await?;
     written += o_prot.write_field_end()?;
     written += o_prot.write_field_begin(&TFieldIdentifier::new("min_values", TType::List, 2)).await?;
-    written += o_prot.write_list_begin(&TListIdentifier::new(TType::String, self.min_values.len().try_into()?)).await?;
+    written += o_prot.write_list_begin(&TListIdentifier::new(TType::Binary, self.min_values.len().try_into()?)).await?;
     for e in &self.min_values {
       written += o_prot.write_bytes(e).await?;
     }
     written += o_prot.write_list_end().await?;
     written += o_prot.write_field_end()?;
     written += o_prot.write_field_begin(&TFieldIdentifier::new("max_values", TType::List, 3)).await?;
-    written += o_prot.write_list_begin(&TListIdentifier::new(TType::String, self.max_values.len().try_into()?)).await?;
+    written += o_prot.write_list_begin(&TListIdentifier::new(TType::Binary, self.max_values.len().try_into()?)).await?;
     for e in &self.max_values {
       written += o_prot.write_bytes(e).await?;
     }
@@ -8246,12 +8246,12 @@ impl AesGcmV1 {
     let struct_ident = TStructIdentifier::new("AesGcmV1");
     written += o_prot.write_struct_begin(&struct_ident)?;
     if let Some(ref fld_var) = self.aad_prefix {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_prefix", TType::String, 1))?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_prefix", TType::Binary, 1))?;
       written += o_prot.write_bytes(fld_var)?;
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.aad_file_unique {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_file_unique", TType::String, 2))?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_file_unique", TType::Binary, 2))?;
       written += o_prot.write_bytes(fld_var)?;
       written += o_prot.write_field_end()?;
     }
@@ -8270,12 +8270,12 @@ impl AesGcmV1 {
     let struct_ident = TStructIdentifier::new("AesGcmV1");
     written += o_prot.write_struct_begin(&struct_ident).await?;
     if let Some(ref fld_var) = self.aad_prefix {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_prefix", TType::String, 1)).await?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_prefix", TType::Binary, 1)).await?;
       written += o_prot.write_bytes(fld_var).await?;
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.aad_file_unique {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_file_unique", TType::String, 2)).await?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_file_unique", TType::Binary, 2)).await?;
       written += o_prot.write_bytes(fld_var).await?;
       written += o_prot.write_field_end()?;
     }
@@ -8412,12 +8412,12 @@ impl AesGcmCtrV1 {
     let struct_ident = TStructIdentifier::new("AesGcmCtrV1");
     written += o_prot.write_struct_begin(&struct_ident)?;
     if let Some(ref fld_var) = self.aad_prefix {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_prefix", TType::String, 1))?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_prefix", TType::Binary, 1))?;
       written += o_prot.write_bytes(fld_var)?;
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.aad_file_unique {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_file_unique", TType::String, 2))?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_file_unique", TType::Binary, 2))?;
       written += o_prot.write_bytes(fld_var)?;
       written += o_prot.write_field_end()?;
     }
@@ -8436,12 +8436,12 @@ impl AesGcmCtrV1 {
     let struct_ident = TStructIdentifier::new("AesGcmCtrV1");
     written += o_prot.write_struct_begin(&struct_ident).await?;
     if let Some(ref fld_var) = self.aad_prefix {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_prefix", TType::String, 1)).await?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_prefix", TType::Binary, 1)).await?;
       written += o_prot.write_bytes(fld_var).await?;
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.aad_file_unique {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_file_unique", TType::String, 2)).await?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("aad_file_unique", TType::Binary, 2)).await?;
       written += o_prot.write_bytes(fld_var).await?;
       written += o_prot.write_field_end()?;
     }
@@ -8839,7 +8839,7 @@ impl FileMetaData {
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.created_by {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("created_by", TType::String, 6))?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("created_by", TType::Binary, 6))?;
       written += o_prot.write_string(fld_var)?;
       written += o_prot.write_field_end()?;
     }
@@ -8858,7 +8858,7 @@ impl FileMetaData {
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.footer_signing_key_metadata {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("footer_signing_key_metadata", TType::String, 9))?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("footer_signing_key_metadata", TType::Binary, 9))?;
       written += o_prot.write_bytes(fld_var)?;
       written += o_prot.write_field_end()?;
     }
@@ -8901,7 +8901,7 @@ impl FileMetaData {
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.created_by {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("created_by", TType::String, 6)).await?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("created_by", TType::Binary, 6)).await?;
       written += o_prot.write_string(fld_var).await?;
       written += o_prot.write_field_end()?;
     }
@@ -8920,7 +8920,7 @@ impl FileMetaData {
       written += o_prot.write_field_end()?;
     }
     if let Some(ref fld_var) = self.footer_signing_key_metadata {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("footer_signing_key_metadata", TType::String, 9)).await?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("footer_signing_key_metadata", TType::Binary, 9)).await?;
       written += o_prot.write_bytes(fld_var).await?;
       written += o_prot.write_field_end()?;
     }
@@ -9135,7 +9135,7 @@ impl FileCryptoMetaData {
     written += self.encryption_algorithm.write_to_out_protocol(o_prot)?;
     written += o_prot.write_field_end()?;
     if let Some(ref fld_var) = self.key_metadata {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("key_metadata", TType::String, 2))?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("key_metadata", TType::Binary, 2))?;
       written += o_prot.write_bytes(fld_var)?;
       written += o_prot.write_field_end()?;
     }
@@ -9152,7 +9152,7 @@ impl FileCryptoMetaData {
     written += self.encryption_algorithm.write_to_out_stream_protocol(o_prot).await?;
     written += o_prot.write_field_end()?;
     if let Some(ref fld_var) = self.key_metadata {
-      written += o_prot.write_field_begin(&TFieldIdentifier::new("key_metadata", TType::String, 2)).await?;
+      written += o_prot.write_field_begin(&TFieldIdentifier::new("key_metadata", TType::Binary, 2)).await?;
       written += o_prot.write_bytes(fld_var).await?;
       written += o_prot.write_field_end()?;
     }
